@@ -1,0 +1,53 @@
+<!-- Daniel Izario -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>sentimentAnalysis</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+
+	<body>
+		<center>
+			<h1><b>Análise de Sentimentos (Twitter)</b></h1>
+		</center>
+		
+		<center><input type="text" id="searchText" placeholder="Digite sua pesquisa e clique ENTER!"></center>
+		<br></br>
+		<div class="results">
+			<h3>Resultados:</h3>
+			<lable class="loading">Loading...</lable>
+			<br/>
+			<lable class="error">Ops... Algo deu errado!</lable>
+			<br/>
+		</div>
+		<section class="tweet-results"></section>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/html" id="tweet_tmpl">
+			<article>
+				<div class="left">
+					<img src="{{=imgSrc}}">
+					<p>{{=tweet}}
+					<a href="{{=tweetLink}}" target="_blank">Link</a></p>
+				</div>
+				<div class="right">
+					<table>
+						<tr>
+							<td>Pontuação</td>
+							<td>{{=score}}</td>
+						</tr>
+						<tr>
+							<td>Classificação</td>
+							<td>{{=classificacao}}</td>
+						</tr>
+						<tr>
+							<td>Retweetou</td>
+							<td>{{=retweet}}</td>
+						</tr>
+					</table>
+				</div>
+			</article>
+		</script>
+	</body>
+</html>
